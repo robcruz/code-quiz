@@ -12,7 +12,15 @@ var questions = [
   ///etc.
 ];
 
-let contentContainer = document.querySelector('#content-containe')
+let contentElement = document.querySelector('#content')
 
-contentContainer.removeChild()
+let h3 = document.createElement('h3')
+let p = document.createElement('p')
+
+contentElement.appendChild(h3)
+contentElement.appendChild(p)
+
+h3.textContent = `Coding Quiz Challenge`
+p.textContent = 'Try to answer the following code related questions within the time frame limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!'
+p.setAttribute('class', 'button-style')
 
