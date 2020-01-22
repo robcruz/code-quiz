@@ -16,6 +16,7 @@ let content = document.querySelector('#content')
 
 landingPage(content)
 
+
 function landingPage(content){
   let h3 = document.createElement('h3')
   let p = document.createElement('p')
@@ -32,6 +33,12 @@ function landingPage(content){
   div.setAttribute('class', 'button-style')
   startQuizButton.setAttribute('class', 'btn btn-sm')
   startQuizButton.textContent = 'Start Quiz'
+
+  startQuizButton.addEventListener('click', function (event) {
+    h3.remove()
+    p.remove()
+    div.remove()
+  })
 }
 
 
