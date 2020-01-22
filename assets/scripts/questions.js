@@ -12,5 +12,7 @@ var questions = [
   ///etc.
 ];
 
+let contentContainer = document.querySelector('#content-containe')
 
+contentContainer.removeChild()
 
