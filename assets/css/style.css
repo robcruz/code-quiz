@@ -11,8 +11,10 @@ button {
     alignment: center;
 }
 
-.button-style {
+.align-center {
     text-align: center;
 }
 
-
+.align-left {
+    text-align: left;
+}
