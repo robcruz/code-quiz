@@ -13,30 +13,34 @@ let questions = [
 ];
 
 let questionsArrayIndex = 0
+let buttonsArr = []
 let startContainer = document.querySelector('#start-container')
 let questionElement = document.querySelector('#question')
 
-loadEventListeners()
 
-function loadEventListeners(){
-  startContainer.addEventListener('click', function (event) {
-    startContainer.remove()
-    renderQuestion(questionsArrayIndex)
-  })
+startContainer.addEventListener('click', function (event) {
+  startContainer.remove()
+  renderQuestion(questionsArrayIndex)
+})
 
-
-}
 
 function renderQuestion(index) {
   let question = questions[index]
   questionElement.textContent = question['title']
 
   question['choices'].forEach((choice, index) => {
-
+    buttonsArr.push(document.querySelector(`button[class="choice-button"][data-index="${index+1}"]`))
   })
+  loadChoiceButtonListeners(buttonsArr)
   question['answer']
 
   questionsArrayIndex++
 }
 
+function loadChoiceButtonListeners(buttons) {
+  buttons.forEach(button => {
+    //record it
 
+    //render next question
+  })
+}
