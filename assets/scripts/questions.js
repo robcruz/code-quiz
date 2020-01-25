@@ -13,33 +13,62 @@ let questions = [
 ];
 
 let content = document.querySelector('#content')
-
 let h3 = document.createElement('h3')
 let p = document.createElement('p')
 let div = document.createElement('div')
 let startQuizButton = document.createElement('button')
+let answerArr = []
+let button = document.createElement('button')
 
-content.appendChild(h3)
-content.appendChild(p)
-content.appendChild(div)
-div.appendChild(startQuizButton)
+let questionsIndex = 0
 
-h3.textContent = `Coding Quiz Challenge`
-p.innerText = 'Try to answer the following code related questions within the time frame limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!'
-p.setAttribute('class', 'button-style')
-div.setAttribute('class', 'button-style')
-startQuizButton.setAttribute('class', 'btn btn-sm')
-startQuizButton.textContent = 'Start Quiz'
 
-startQuizButton.addEventListener('click', function (event) {
+
+startQuizButton.addEventListener('click', startQuiz)
+
+
+loadLandingPage()
+
+
+function startQuiz(event){
+  event.preventDefault()
   h3.remove()
   p.remove()
   div.remove()
 
-  questions.forEach(question => {
-    console.log(question['title'])
+  let h4 = document.createElement('h4')
+  button.textContent = 'continue'
+
+
+  content.appendChild(h4)
+  h4.innerHTML = questions[questionsIndex]['title']
+
+  let br = document.createElement('BR')
+  questions[questionsIndex]['choices'].forEach(choice => {
+    let button = document.createElement('button')
+    content.appendChild(button)
+    button.innerText = choice
+    // div.appendChild(document.createElement('BR'))
+    button.append(document.createElement('BR'))
+    // button.append(document.createElement('br'))
+    // document.write('<br/>')
   })
-})
 
 
+}
+
+function loadLandingPage() {
+  content.appendChild(h3)
+  content.appendChild(p)
+  content.appendChild(div)
+  div.appendChild(startQuizButton)
+
+  div.setAttribute('class', 'button-style')
+
+  h3.textContent = `Coding Quiz Challenge`
+  p.innerText = ''
+  p.setAttribute('class', 'button-style')
+  startQuizButton.setAttribute('class', 'btn btn-sm')
+  startQuizButton.textContent = 'Start Quiz'
+}
 
