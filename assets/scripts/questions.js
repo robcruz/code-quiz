@@ -12,7 +12,7 @@ let questions = [
   ///etc.
 ];
 
-let scoreArr = []
+let answersArr = []
 let questionsArrayIndex = 0
 let buttonsIndex = 0
 let startContainer = document.querySelector('#start-container')
@@ -39,6 +39,8 @@ function renderQuestion(index) {
         questionContainer.remove()
         return
       }
+      // record user response
+      answersArr.push(index)
       renderQuestion(questionsArrayIndex)
     })
   })
