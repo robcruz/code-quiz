@@ -40,6 +40,8 @@ function loadChoiceButtonListeners(buttons) {
   buttons.forEach(button => {
     //record it
 
+
+
     //render next question
   })
 }
