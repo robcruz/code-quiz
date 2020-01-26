@@ -23,7 +23,6 @@ startContainer.addEventListener('click', function (event) {
   renderQuestion(questionsArrayIndex)
 })
 
-
 function renderQuestion(index) {
   let question = questions[index]
   questionElement.textContent = question['title']
